@@ -1,95 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="funcoes.js"></script>
     <title>Calculadora</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .fundo {
-            background-color: rgb(6, 55, 6);
-            height: 100vh;
-            text-align: center;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif
-        }
-
-        .calculadora {
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.8);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 15px;
-
-        }
-
-        .botao {
-            width: 50px;
-            height: 50px;
-            font-size: 25px;
-            cursor: pointer;
-            margin: 3px;
-            background-color: rgb(31, 31, 31);
-            border: none;
-            color: white;
-        }
-
-        .botao:hover {
-            background-color: rgb(10, 10, 10);
-        }
-
-        .botao2 {
-            width: 50px;
-            height: 50px;
-            font-size: 25px;
-            cursor: pointer;
-            margin: 3px;
-            background-color: rgb(23, 76, 23);
-            border: none;
-            color: white;
-        }
-
-        .botao2:hover {
-            background-color: rgb(14, 36, 14);
-        }
-
-        .botao3 {
-            width: 50px;
-            height: 50px;
-            font-size: 25px;
-            cursor: pointer;
-            margin: 3px;
-            background-color: rgb(177, 19, 19);
-            border: none;
-            color: white;
-        }
-
-        .botao3:hover {
-            background-color: rgb(92, 4, 4);
-        }
-
-        #resultado {
-            background-color: white;
-            width: 214px;
-            height: 30px;
-            margin: 5px;
-            font-size: 25px;
-            color: black;
-            text-align: right;
-            padding: 5px;
-        }
-    </style>
-
 </head>
-
 <body>
     <div class="fundo">
         <div class="calculadora">
@@ -125,30 +43,7 @@
                     <td><button class="botao" onclick="insert('.')">.</button></td>
                 </tr>
             </table>
-
         </div>
     </div>
-    <script>
-        function insert(num) {
-            var numero = document.getElementById('resultado').innerHTML;
-            document.getElementById('resultado').innerHTML = numero + num
-        }
-        function clean() {
-            document.getElementById('resultado').innerHTML = "";
-        }
-        function back() {
-            var resultado = document.getElementById('resultado').innerHTML;
-            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
-        }
-        function calcular() {
-            var resultado = document.getElementById('resultado').innerHTML;
-            if (resultado) {
-                document.getElementById('resultado').innerHTML = eval(resultado);
-            }
-
-        }
-
-    </script>
 </body>
-
 </html>
